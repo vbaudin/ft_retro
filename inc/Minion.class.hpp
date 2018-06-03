@@ -13,9 +13,9 @@
 #ifndef MINION_CLASS_HPP
 # define MINION_CLASS_HPP
 
-# include "AEnemy.class.hpp"
+# include "Enemy.class.hpp"
 
-class Minion	: virtual public AEnemy
+class Minion	: virtual public Enemy
 {
 	private:
 
@@ -24,6 +24,7 @@ class Minion	: virtual public AEnemy
 	public:
 					Minion( void );						// Default constructor
 					Minion(int posX, int posY);
+					Minion(int posX, int posY, char appearance);
 					Minion(const Minion & origin);		// Copy constructor
 		virtual		~Minion( void );					// Default destructor
 		Minion &	operator=(Minion const & origin);	// Assignation overload
@@ -33,5 +34,6 @@ class Minion	: virtual public AEnemy
 # define MINION_DEFAULT_HP			1
 # define MINION_DEFAULT_SIZE_X		1
 # define MINION_DEFAULT_SIZE_Y		1
+# define MINION_DEFAULT_SCORE		100
 
 #endif /* MINION_CLASS_HPP */

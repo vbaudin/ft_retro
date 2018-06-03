@@ -12,14 +12,18 @@
 
 #include "Game.hpp"
 
-int main() {
+int main( void) {
 
-  Game *game = new Game();
-  game->play();
-  delete game;
+ 	Game *	game = new Game();
 
-  // map->printMap();
+ 	game->play();
+	delete game;
 
-  return 0;
+/*
+	while (1)
+		;
+*/
+
+ 	return (0);
 
 }

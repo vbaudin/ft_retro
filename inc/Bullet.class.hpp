@@ -19,10 +19,10 @@ class Bullet	: virtual public AEntity
 {
 	private:
 		// How the bullet moves
-		int			_mvtX;
-		int			_mvtY;
-		int			_playerId;
-		static uint64_t _secs;
+		int				_mvtX;
+		int				_mvtY;
+		int				_playerId;
+		static uint64_t	_secs;
 
 					Bullet( void );						// Default constructor
 
@@ -65,12 +65,12 @@ class Bullet	: virtual public AEntity
 		int	const & 		getMvtX( void ) const;
 		int	const & 		getMvtY( void ) const;
 		int	const & 		getPlayerId( void ) const;
-		static uint64_t     getSecs( void );
+		static uint64_t		getSecs( void );
 		// setter
 		void				setMvtX(int value);
 		void				setMvtY(int value);
 		void				setPlayerId(int value);
-		static void     setSecs( uint64_t secs );
+		static void			setSecs( uint64_t secs );
 
 		// function
 		using 			AEntity::move;

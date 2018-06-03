@@ -1,58 +1,58 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Minion.class.cpp                                   :+:      :+:    :+:   //
+//   Boss.class.cpp                                     :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: mrajaona <marvin@42.fr>                    +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/06/02 13:15:20 by mrajaona          #+#    #+#             //
-//   Updated: 2018/06/02 13:15:22 by mrajaona         ###   ########.fr       //
+//   Created: 2018/06/03 09:57:21 by mrajaona          #+#    #+#             //
+//   Updated: 2018/06/03 09:57:23 by mrajaona         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include <iostream>
-#include "Minion.class.hpp"
+#include "Boss.class.hpp"
 #include "error.hpp"
 
-					Minion::Minion( void ) :
+					Boss::Boss( void ) :
 	AEntity(
 		0, 0,
-		MINION_DEFAULT_SIZE_X, MINION_DEFAULT_SIZE_Y,
-		MINION_DEFAULT_HP,
-		MINION_DEFAULT_APPEARANCE
+		BOSS_DEFAULT_SIZE_X, BOSS_DEFAULT_SIZE_Y,
+		BOSS_DEFAULT_HP,
+		BOSS_DEFAULT_APPEARANCE
 		),
 	Enemy(
 		0, 0,
-		MINION_DEFAULT_SIZE_X, MINION_DEFAULT_SIZE_Y,
-		MINION_DEFAULT_HP,
-		MINION_DEFAULT_APPEARANCE,
-		MINION_DEFAULT_SCORE
+		BOSS_DEFAULT_SIZE_X, BOSS_DEFAULT_SIZE_Y,
+		BOSS_DEFAULT_HP,
+		BOSS_DEFAULT_APPEARANCE,
+		BOSS_DEFAULT_SCORE
 		)
 {
 	// FOR HORDE CREATION
-	// std::cerr << BAD_CONSTRUCTOR_ERR << "Minion" << std::endl;
+	// std::cerr << BAD_CONSTRUCTOR_ERR << "Boss" << std::endl;
 	return ;
 }
 
-					Minion::Minion(int posX, int posY, char appearance) :
+					Boss::Boss(int posX, int posY) :
 	AEntity(
 		posX, posY,
-		MINION_DEFAULT_SIZE_X, MINION_DEFAULT_SIZE_Y,
-		MINION_DEFAULT_HP,
-		appearance
+		BOSS_DEFAULT_SIZE_X, BOSS_DEFAULT_SIZE_Y,
+		BOSS_DEFAULT_HP,
+		BOSS_DEFAULT_APPEARANCE
 		),
 	Enemy(
 		posX, posY,
-		MINION_DEFAULT_SIZE_X, MINION_DEFAULT_SIZE_Y,
-		MINION_DEFAULT_HP,
-		appearance,
-		MINION_DEFAULT_SCORE
+		BOSS_DEFAULT_SIZE_X, BOSS_DEFAULT_SIZE_Y,
+		BOSS_DEFAULT_HP,
+		BOSS_DEFAULT_APPEARANCE,
+		BOSS_DEFAULT_SCORE
 		)
 {
 	return ;
 }
 
-					Minion::Minion(const Minion & origin) :
+					Boss::Boss(const Boss & origin) :
 	AEntity(
 		origin.getPosX(),
 		origin.getPosY(),
@@ -74,11 +74,11 @@
 	return ;
 }	
 
-					Minion::~Minion( void ) {
+					Boss::~Boss( void ) {
 						return ;
 }	
 									// Default destructor
-		Minion &	Minion::operator=(Minion const & origin) {
+Boss &				Boss::operator=(Boss const & origin) {
 	Enemy::operator=(origin);
 	return (*this);
 }	

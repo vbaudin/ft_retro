@@ -6,39 +6,40 @@
 #    By: mrajaona <mrajaona@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/02 09:35:30 by mrajaona          #+#    #+#              #
-#    Updated: 2018/06/02 14:37:03 by vbaudin          ###   ########.fr        #
+#    Updated: 2018/06/03 14:11:02 by vbaudin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	ft_retro
 
 DIRSRC		=	./src/
-SRC			=	AEnemy.class.cpp \
+SRC			=	Enemy.class.cpp \
 				AEntity.class.cpp \
 				Bullet.class.cpp \
-				IShip.class.cpp \
 				Player.class.cpp \
 				Minion.class.cpp \
+				Boss.class.cpp \
 				main.cpp \
-				Map.cpp \
 				Game.cpp \
 				Star.class.cpp
 
 
 DIRINC		=	./inc/
-INC			=	AEnemy.class.hpp \
+INC			=	Enemy.class.hpp \
 				AEntity.class.hpp \
 				Bullet.class.hpp \
-				IShip.class.hpp \
 				Player.class.hpp \
 				Minion.class.hpp \
-				error.hpp
+				Boss.class.hpp \
+				error.hpp \
+				Game.hpp \
+				Star.class.hpp
 
 SRCS		=	$(addprefix $(DIRSRC), $(SRC))
 INCS		=	$(addprefix $(DIRINC), $(INC))
 OBJS		=	$(SRCS:.cpp=.o)
 
-CPPFLAGS	=	-Wall -Wextra -Werror -I$(DIRINC)
+CPPFLAGS	=	-fsanitize=address -Wall -Wextra -Werror -I$(DIRINC) -g
 
 CC			=	/usr/bin/clang++
 RM			=	/bin/rm -rf

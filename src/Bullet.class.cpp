@@ -142,13 +142,13 @@ int	const & 		Bullet::getPlayerId( void ) const {
 	return (this->_playerId);
 }
 
-uint64_t Bullet::getSecs( void ) {
+uint64_t			Bullet::getSecs( void ) {
 
 	return Bullet::_secs;
 }
 // setter
 
-void Bullet::setSecs( uint64_t secs ) {
+void				Bullet::setSecs( uint64_t secs ) {
 
 	Bullet::_secs = secs;
 	return;

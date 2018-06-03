@@ -13,6 +13,8 @@
 #ifndef ERROR_HPP
 # define ERROR_HPP
 
-# define BAD_CONSTRUCTOR_ERR "Bad constructor used for class : "
+# define BAD_CONSTRUCTOR_ERR	"Bad constructor used for class : "
+# define ERR_WIN_RESIZED		"WINDOW RESIZE DETECTED, PLEASE QUIT THE GAME (PRESS 'q')"
+# define ERR_WIN_SMALL			"WINDOW IS TOO SMALL, PLEASE QUIT THE GAME (PRESS 'q')"
 
 #endif /* ERROR_HPP */

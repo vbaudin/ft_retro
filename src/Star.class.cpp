@@ -12,24 +12,25 @@
 
 #include "Star.class.hpp"
 
-Star::Star(void) {
+	Star::Star(void) {
   // std::cout << "Star Detruit !!" << std::endl;
 }
 
-Star::Star( int x, int y ) : _x( x ), _y( y ) {
+	Star::Star( int x, int y ) :
+	_x( x ),
+	_y( y )
+{
   // std::cout << "Nouveau Star creer !!" << std::endl;
 }
 
-Star::~Star(void) {
+	Star::~Star(void) {
   // std::cout << "Star Detruit !!" << std::endl;
 }
 
-int   Star::getY( void ) const {
-
-  return this->_y;
+int	Star::getY( void ) const {
+  return (this->_y);
 }
 
-int   Star::getX( void ) const {
-
-  return this->_x;
+int	Star::getX( void ) const {
+  return (this->_x);
 }

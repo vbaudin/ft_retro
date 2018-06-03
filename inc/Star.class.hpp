@@ -13,9 +13,9 @@
 #ifndef Star_HPP
 # define Star_HPP
 
-#include <string>
-#include <iostream>
-#include <sstream>
+# include <string>
+# include <iostream>
+# include <sstream>
 
 // #include "GameEntities.hpp"
 
@@ -23,17 +23,17 @@ struct Star {
 
   public:
 
-    Star(void);
-    Star( int x, int y );
-    ~Star(void);
+			Star(void);
+    		Star( int x, int y );
+    		~Star(void);
 
-    int   getY( void ) const;
-    int   getX( void ) const;
+    int		getY( void ) const;
+    int		getX( void ) const;
 
   private:
 
-    int     _x;
-    int     _y;
+    int		_x;
+    int		_y;
 
 };
 

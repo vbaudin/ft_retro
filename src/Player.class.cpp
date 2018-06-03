@@ -15,8 +15,7 @@
 #include "error.hpp"
 
 			Player::Player( void ) :
-	AEntity(0, 0, 0, 0, 0, ' '),
-	IShip(0, 0, 0, 0, 0, ' ')
+	AEntity(0, 0, 0, 0, 0, ' ')
 {
 	std::cerr << BAD_CONSTRUCTOR_ERR << "Player" << std::endl;
 	return ;
@@ -29,12 +28,6 @@
 				int id
 				) :
 	AEntity(
-		posX, posY,
-		sizeX, sizeY,
-		PLAYER_DEFAULT_HP,
-		PLAYER_DEFAULT_APPEARANCE
-		),
-	IShip(
 		posX, posY,
 		sizeX, sizeY,
 		PLAYER_DEFAULT_HP,
@@ -60,12 +53,6 @@
 		PLAYER_DEFAULT_HP,
 		appearance
 		),
-	IShip(
-		posX, posY,
-		sizeX, sizeY,
-		PLAYER_DEFAULT_HP,
-		appearance
-		),
 	_score(0),
 	_lives(PLAYER_DEFAULT_LIVES - 1),
 	_id(id)
@@ -76,14 +63,6 @@
 
 			Player::Player(const Player & origin) :
 	AEntity(
-		origin.getPosX(),
-		origin.getPosY(),
-		origin.getSizeX(),
-		origin.getSizeY(),
-		origin.getHP(),
-		origin.getAppearance()
-		),
-	IShip(
 		origin.getPosX(),
 		origin.getPosY(),
 		origin.getSizeX(),
@@ -103,7 +82,7 @@
 }
 
 Player &	Player::operator=(Player const & origin) {
-	IShip::operator=(origin);
+	AEntity::operator=(origin);
 	this->_score 	= origin.getScore();
 	this->_lives	= origin.getLives();
 	this->_id		= origin.getId();
@@ -136,4 +115,20 @@ void			Player::setLives(size_t value) {
 
 void			Player::setId(int value) {
 	this->_id = value;
+}
+
+// function
+
+void			Player::editScore(int value) {
+	if (value > 0) {
+		this->_score += value;
+		if (this->_score > PLAYER_MAX_SCORE)
+			this->_score = PLAYER_MAX_SCORE;
+	} else {
+		size_t abs_value = abs(value);
+		if (this->_score >= abs_value)
+			this->_score += value;		
+		else
+			this->_score = 0;
+	}
 }
